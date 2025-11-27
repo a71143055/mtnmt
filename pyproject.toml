@@ -1,4 +1,15 @@
 [project]
 name = "mtnmt"
 version = "0.1.0"
-dependencies = ["numpy","vtk"]
+description = "mtnmt: graphene-polymer-liquid-crystal + meta-learning prototype"
+authors = [{name="정구영", email="you@example.com"}]
+requires-python = ">=3.10,<3.11"
+
+[project.dependencies]
+numpy = "*"
+vtk = "*"
+pybind11 = {optional = true}
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

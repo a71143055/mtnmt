@@ -1,1 +1,2 @@
-# placeholder; 실제는 pv_visualize.write_vtk가 생성
+# placeholder file
+# 실제 데이터는 src/mtnmt/main.py 실행 시 src/mtnmt/paraview/pv_visualize.write_vtk가 생성합니다.

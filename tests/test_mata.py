@@ -1,5 +1,7 @@
-from src.mtntm.meta_learning import MetaLearner
+# tests/test_meta.py
+from mtnmt.meta_learning import MetaLearner
+
 def test_run():
-    m = MetaLearner(dim=8)
+    m = MetaLearner(dim=8, seed=0)
     s = m.run(steps=5)
-    assert len(s) == 8
+    assert s.shape == (8,)
