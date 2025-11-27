@@ -1,4 +1,3 @@
-import numpy as np
 import vtk
 
 def write_vtk(state, path):
