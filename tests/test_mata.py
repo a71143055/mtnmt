@@ -1,4 +1,4 @@
-from src.meta_learning import MetaLearner
+from src.mtntm.meta_learning import MetaLearner
 def test_run():
     m = MetaLearner(dim=8)
     s = m.run(steps=5)
