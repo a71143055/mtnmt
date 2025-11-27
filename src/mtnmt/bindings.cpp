@@ -1,4 +1,3 @@
-// src/mtnmt/bindings.cpp
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
 

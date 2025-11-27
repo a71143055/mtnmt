@@ -1,12 +1,7 @@
-# src/mtnmt/paraview/pv_visualize.py
 import numpy as np
 import vtk
 
 def write_vtk(state: np.ndarray, path: str) -> None:
-    """
-    1D numpy 배열 state를 간단한 vtk PolyData로 저장.
-    각 인덱스를 x 좌표로, 값은 y 좌표로 사용.
-    """
     n = int(state.size)
     points = vtk.vtkPoints()
     for i, v in enumerate(state):
@@ -21,9 +16,10 @@ def write_vtk(state: np.ndarray, path: str) -> None:
     arr.SetNumberOfTuples(n)
     for i, v in enumerate(state):
         arr.SetValue(i, float(v))
-    poly.GetPointData().AddArray(arr)
+    poly.GetPointData().SetScalars(arr)
 
     writer = vtk.vtkPolyDataWriter()
     writer.SetFileName(path)
     writer.SetInputData(poly)
+    writer.SetFileTypeToASCII()
     writer.Write()
