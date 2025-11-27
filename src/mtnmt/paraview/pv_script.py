@@ -1,11 +1,11 @@
 from paraview.simple import *
 import sys, os
 
-def pv_render(vtk_path: str, screenshot_path: str = "render.png"):
-    if not os.path.exists(vtk_path):
-        raise FileNotFoundError(f"{vtk_path} not found")
+def pv_render(vtp_path: str, screenshot_path: str = "render.png"):
+    if not os.path.exists(vtp_path):
+        raise FileNotFoundError(f"{vtp_path} not found")
 
-    data = LegacyVTKReader(FileNames=[vtk_path])
+    data = XMLPolyDataReader(FileName=[vtp_path])
     view = GetActiveViewOrCreate('RenderView')
     display = Show(data, view)
     ColorBy(display, ('POINTS', 'value'))
@@ -16,8 +16,8 @@ def pv_render(vtk_path: str, screenshot_path: str = "render.png"):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: pvpython pv_script.py <vtk_path> [screenshot_path]")
+        print("Usage: pvpython pv_script.py <vtp_path> [screenshot_path]")
     else:
-        vtk_path = sys.argv[1]
+        vtp_path = sys.argv[1]
         screenshot = sys.argv[2] if len(sys.argv) > 2 else "render.png"
-        pv_render(vtk_path, screenshot)
+        pv_render(vtp_path, screenshot)

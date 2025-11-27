@@ -18,8 +18,7 @@ def write_vtk(state: np.ndarray, path: str) -> None:
         arr.SetValue(i, float(v))
     poly.GetPointData().SetScalars(arr)
 
-    writer = vtk.vtkPolyDataWriter()
+    writer = vtk.vtkXMLPolyDataWriter()
     writer.SetFileName(path)
     writer.SetInputData(poly)
-    writer.SetFileTypeToASCII()
     writer.Write()

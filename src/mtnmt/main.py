@@ -12,8 +12,8 @@ def main():
     except Exception:
         pass
 
-    write_vtk(state, "data/sample_state.vtk")
-    print("Wrote data/sample_state.vtk")
+    write_vtk(state, "data/sample_state.vtp")
+    print("Wrote data/sample_state.vtp")
 
 if __name__ == "__main__":
     main()
