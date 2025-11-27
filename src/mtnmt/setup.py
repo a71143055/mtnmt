@@ -4,7 +4,7 @@ import pybind11
 ext_modules = [
     Extension(
         "material_bindings",
-        sources=["src/mtnmt/bindings.cpp", "src/mtnmt/material_model.c"],
+        sources=["bindings.cpp", "material_model.c"],
         include_dirs=[pybind11.get_include()],
         language="c++",
     ),
